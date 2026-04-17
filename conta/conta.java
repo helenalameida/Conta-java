@@ -7,31 +7,23 @@ public class Conta {
     private String titular;
     private double saldo;
 
-    public Conta(int numero) {
+    public Conta(int numero,String titular) {
         this.numero = numero;
         this.titular = "Desconhecido";
         this.saldo = 0.0;
     })
     public void depositar(double valor) {
         if (valor > 0) {
-            this.saldo += valor;
-            System.out.println("✅ Depósito de R$ " + valor + " realizado com sucesso!");
-        } else {
-            System.out.println("❌ Erro: O valor do depósito deve ser positivo.");
+            saldo += valor;
+
         }
     }
 
     public void sacar(double valor) {
         if (valor > 0) {
             if (valor <= this.saldo) {
-                this.saldo -= valor;
-                System.out.println("✅ Saque de R$ " + valor + " realizado!");
-            } else {
-                System.out.println("❌ Erro: Saldo insuficiente.");
-            }
-        } else {
-            System.out.println("❌ Erro: O valor do saque deve ser positivo.");
-        }
+                saldo -= valor;
+        
     }
 
     public int getNumero() {
